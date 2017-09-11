@@ -22,7 +22,7 @@ Options:
   -c, --CR              Run with the CR flag. [default = False]
   -o DIRECTORY, --outputFolder=DIRECTORY
                         Define path for the output files [default = root://cms
-                        eos.fnal.gov//store/user/kpadeken/REPLACEBYTAG/]
+                        eos.fnal.gov//store/user/YOURUSERNAME/REPLACEBYTAG/]
   -l, --local           run localy over the files [default = False]
   -f, --force           Force the output folder to be overwritten. [default =
                         False]
@@ -30,7 +30,7 @@ Options:
                         INFO, DEBUG. [default = INFO]
   -t DIRECTORY, --Tag=DIRECTORY
                         Define a Tag for the output directory. [default =
-                        output2017_9_11]
+                        output_DATE_short]
 ```
 
 and:
@@ -47,7 +47,7 @@ Options:
   --debug=LEVEL         Set the debug level. Allowed values: ERROR, WARNING,
                         INFO, DEBUG. [default = INFO]
   -o OUTFOLDER, --output=OUTFOLDER
-                        Set the output dir [default = output2017_9_11_14_0]
+                        Set the output dir [default = output_DATE_long]
   -f, --force           If this option is specifed, all root files will be
                         remerged. [default = False]
   -c, --clean           If this option is specifed, the folders will be cleand
