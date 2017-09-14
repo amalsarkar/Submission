@@ -9,6 +9,14 @@ In order to submit:
 * run ./remote.py SAMPLES_LIST.cfg
 * add files ./add_root_files.py
 
+One comment on the input for the SAMPLES_LIST.cfg:
+* It will automatically update the samples that are not in the folder at the first run
+* The sample name has to be something that fits
+        /eos/uscms/store/user/ra2tau/July72017/*/*NAME*
+        /eos/uscms/store/user/ra2tau/jan2017tuple/*/*NAME*
+        /eos/uscms/store/user/ra2tau/jruizalv/*/*NAME*
+
+
 There are some options you might want to look at ./remote.py -h or ./add_root_files.py -h
 
 ```bash
