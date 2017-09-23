@@ -74,7 +74,7 @@ def create_sample_list(sample):
     "/eos/uscms/store/user/ra2tau/July72017/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/%s"%(sample),
-    "/eos/uscms//store/user/jruizalv/*/*/*%s*"%(sample),
+    "/eos/uscms//store/user/jruizalv/*%s*"%(sample),
     ]
     for l in locations:
         folder=getFolder(l,sample)

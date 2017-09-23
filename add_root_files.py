@@ -86,7 +86,9 @@ def final_merge(options):
         while True:
             time.sleep(5)
             if not pool._cache: break
-    shutil.rmtree(options.output+"/tmp")
+    if os.path.exists(options.output+"/tmp/allData.root"):
+        shutil.move(options.output+"/tmp/allData.root",options.output+"/allData.root")
+    #shutil.rmtree(options.output+"/tmp")
     
     
 
@@ -124,14 +126,9 @@ def megeRootFiles(options):
             if data not in dataSamples:
                 dataSamples.append(data)
     for dataSample in dataSamples:
-        command= "hadd -f9 "+outputFolder+"/"+"Data_%s.root "%(os.path.basename(dataSample))+outputFolder+"/"+"Data_*_%s.root"%(os.path.basename(dataSample))
-        print(command)
-        p = subprocess.Popen(command,shell=True, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
-        out, err = p.communicate()
-        log.debug(out)
-        log.debug(err)
+        shutil.move(outputFolder+"/"+"%s.root"%(os.path.basename(dataSample)),outputFolder+"/"+"Data_%s.root"%(os.path.basename(dataSample)))
     if hasData:
-        all_merged_data_files=[outputFolder+"/"+"Data_%s.root "%(dataSample)  for dataSample in dataSamples]
+        all_merged_data_files=[outputFolder+"/"+"Data_%s.root "%(os.path.basename(dataSample))  for dataSample in dataSamples]
         command= "hadd -f9 "+outputFolder+"/"+"allData.root "+" ".join(all_merged_data_files)
         print(command)
         p = subprocess.Popen(command,shell=True, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
