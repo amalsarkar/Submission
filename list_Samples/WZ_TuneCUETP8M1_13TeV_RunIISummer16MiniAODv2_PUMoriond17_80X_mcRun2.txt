@@ -50,7 +50,6 @@
 46113081     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_28.root
 469216081     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_29.root
 49223495     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_3.root
-70522158     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_30.root
 40938507     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_31.root
 36560220     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_32.root
 182241400     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_33.root
@@ -59,7 +58,6 @@
 70735785     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_36.root
 56693858     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_37.root
 22532996     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_38.root
-19062883     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_39.root
 32528168     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_4.root
 7569264     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_40.root
 230580401     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_41.root
@@ -78,12 +76,12 @@
 180145561     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_53.root
 205916058     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_55.root
 123133287     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_56.root
+69471019     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_57.root
 8116081     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_58.root
 134820806     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_59.root
 195532162     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_6.root
 191411908     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_60.root
 172751710     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_61.root
-399911898     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_62.root
 178962672     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_63.root
 502887328     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_64.root
 492221249     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WZ_TuneCUETP8M1_13TeV-pythia8/WZ_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_162152/0000/OutTree_65.root

@@ -1,3 +1,4 @@
+290222143     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_1.root
 279000537     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_10.root
 288050997     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_11.root
 285571999     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_12.root
@@ -14,11 +15,13 @@
 281750451     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_22.root
 276431792     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_23.root
 276766765     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_24.root
+278051709     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_25.root
 283516085     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_26.root
 278545277     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_27.root
 277907054     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_28.root
 282378645     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_29.root
 275240260     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_3.root
+282778045     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_30.root
 277292037     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_31.root
 279510047     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_32.root
 288901792     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016H_PromptReco_v3_fix3/170309_215217/0000/OutTree_4.root

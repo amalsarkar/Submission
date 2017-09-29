@@ -99,7 +99,7 @@ def create_sample_list(sample):
             except:
                 output=""
             for f in files:
-                if ".root" in f:
+                if ".root" in f and not "failed" in f:
                     filepath=os.path.join(root, f).replace("/eos/uscms","root://cmseos.fnal.gov//")
                     if filepath.split("//")[-1] in output:
                         log.info("Bad file: %s"%filepath)
@@ -198,9 +198,11 @@ def main():
                             help = 'Force the output folder to be overwritten. [default = %default]')
     parser.add_option( '--debug', metavar = 'LEVEL', default = 'INFO',
                        help= 'Set the debug level. Allowed values: ERROR, WARNING, INFO, DEBUG. [default = %default]' )
-    parser.add_option( '-t', '--Tag', default = "output%s_%s_%s"%(date_time.year,
+    parser.add_option( '-t', '--Tag', default = "run_%s_%s_%s_%s"%(date_time.year,
                                                                         date_time.month,
-                                                                        date_time.day), metavar = 'DIRECTORY',
+                                                                        date_time.day,
+                                                                        date_time.hour,
+                                                                        ), metavar = 'DIRECTORY',
                         help = 'Define a Tag for the output directory. [default = %default]' )
         
 

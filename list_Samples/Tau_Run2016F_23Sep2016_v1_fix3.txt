@@ -190,7 +190,6 @@
 288696549     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_271.root
 281532899     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_272.root
 279172991     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_273.root
-295357475     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_274.root
 273677199     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_275.root
 302482856     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_276.root
 260119579     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_277.root
@@ -219,11 +218,11 @@
 265454432     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_298.root
 300014213     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_299.root
 263070580     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_3.root
+301309270     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_30.root
 274837952     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_300.root
 267105341     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_301.root
 318751566     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_302.root
 268851902     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_303.root
-293796861     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_304.root
 275838084     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_305.root
 296292975     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_306.root
 265976039     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_307.root
@@ -271,6 +270,7 @@
 321174878     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_345.root
 264272278     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_346.root
 269353678     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_347.root
+299653173     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_348.root
 263614400     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_349.root
 296494740     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_35.root
 304544024     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_350.root
@@ -288,7 +288,6 @@
 281444427     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_361.root
 265255001     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_362.root
 287126766     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_363.root
-282338782     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_364.root
 297445011     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_365.root
 271972309     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_366.root
 276054142     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_367.root
@@ -323,6 +322,7 @@
 290104391     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_393.root
 272436829     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_394.root
 283725924     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_395.root
+271992007     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_396.root
 269030509     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_397.root
 311301031     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_398.root
 312805420     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_399.root
@@ -509,6 +509,7 @@
 287104489     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_562.root
 271865268     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_563.root
 274217678     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_564.root
+286611374     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_565.root
 279012872     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_566.root
 269099520     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_567.root
 288644158     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/Tau/Tau_Run2016F_23Sep2016_v1_fix3/170309_215038/0000/OutTree_568.root

@@ -11,6 +11,7 @@ import re,sys,time,shutil,glob,subprocess
 from random import randint
 from datetime import datetime
 import re
+os.nice(10)
 
 # main function is called at the end.
 #
@@ -62,6 +63,8 @@ def final_merge(options):
     match1 = re.compile('(_ext)|(_TuneCUETP8M1)|([_-][vV][123])|(_RunII)|(_13TeV)')
     
     for file in files:
+        if(os.path.isdir(file)):
+            continue
         file=os.path.basename(file)
         file=file.replace("crab_","")
         if "Run20" in file:
@@ -70,6 +73,8 @@ def final_merge(options):
         if m1 is not None:
             shortname=file[0:m1.span()[0]]
             short_names.add(shortname)
+        else:
+            short_names.add(file.replace(".root",""))
     outdir=options.output
     if not os.path.exists(outdir):
         os.makedirs(outdir)
