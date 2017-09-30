@@ -136,13 +136,8 @@ sleep $[ ( $RANDOM % 30 ) ]
 date
 
 cd ${_CONDOR_SCRATCH_DIR}
-"""
-    for fileDir in binConfig.cpFiles:
-        exe+="cp -r $ANALYSISDIR/"+fileDir+" .\n"
-
-    exe+="""
-cp -r $ANALYSISDIR/$CONFIGDIR .
-
+tar -xvzf exe.tar.gz
+ls
 isData=$ISDATA
 
 if [ ! -z $isData ]
@@ -164,11 +159,11 @@ rm run.sh
         exe+="rm -r "+fileDir+" \n"
     exe+="rm -r $CONFIGDIR \n"
     exe+="rm -r *.root \n"
+    exe+="rm -r * \n"
     CR=""
     if options.CR:
         CR="-CR"
     d = dict(
-            ANALYSISDIR=binConfig.PathtoExecutable.replace("/uscms/home/","/uscms_data/d3/").replace("nobackup/",""),
             CONFIGDIR=options.configdir,
             INPUTFILES=" ".join(inputfiles),
             OUPUTFILE=outputfile,
@@ -233,13 +228,30 @@ def main():
         shutil.rmtree(options.outputFolder.replace("root://cmseos.fnal.gov/","/eos/uscms/"))
     os.makedirs(options.outputFolder.replace("root://cmseos.fnal.gov/","/eos/uscms/"))
     
-    
     cfgFile = args[ 0 ]
     sampleList=getFilesfromFile(cfgFile,options)
     
 
     thisdir=os.getcwd()
-
+    
+    
+    exepath=os.path.join(options.Tag,"exe")
+    if os.path.exists(exepath):
+        shutil.rmtree(exepath)
+    os.makedirs(exepath)
+    anadir=binConfig.PathtoExecutable.replace("/uscms/home/","/uscms_data/d3/").replace("nobackup/","")
+    for fileDir in binConfig.cpFiles:
+        if os.path.isdir(os.path.join(anadir,fileDir)):
+            shutil.copytree(os.path.join(anadir,fileDir),os.path.join(exepath,fileDir))
+        else:
+            shutil.copy(os.path.join(anadir,fileDir),os.path.join(exepath,fileDir))
+    shutil.copytree(os.path.join(anadir,options.configdir),os.path.join(exepath,options.configdir))
+    
+    os.chdir(exepath)
+    command="tar czf exe.tar.gz *"
+    subprocess.call(command, shell=True)
+    os.chdir(thisdir)
+    pathtozip=os.path.join(os.path.abspath(exepath),"exe.tar.gz")
 
     n_jobs=0
     for sample in sampleList:
@@ -269,10 +281,12 @@ getenv          = true
 Error           = err.$(Process)_$(Cluster)
 Output          = out.$(Process)_$(Cluster)
 Log             = condor_$(Cluster).log
+transfer_input_files = %s
+should_transfer_files = YES
 request_memory  = 0.5 GB
 Notification    = Error
 
-"""
+"""%(pathtozip)
         f=open("wrapper.sh","w")
         f.write(wrapper)
         f.close()
