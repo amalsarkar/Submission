@@ -3,7 +3,7 @@
 import binConfig
 import checkEnvironment
 from datetime import datetime
-import optparse,os,time,pickle,subprocess,shutil,sys,getpass
+import optparse,os,time,pickle,subprocess,shutil,sys,getpass,re
 import logging
 import ROOT
 log = logging.getLogger( 'remote' )
@@ -118,6 +118,10 @@ def getFilesfromFile(cfgFile, options):
         if line[0]=="#" or len(line.split())==0:
             continue
         sample=line.strip()
+        sample=re.sub('-amcatnloFXFX-pythia8$', '', sample)
+        sample=re.sub('-madgraphMLM-pythia8$', '', sample)
+        sample=re.sub('-powheg_pythia8$', '', sample)
+        sample=re.sub('-pythia8$', '', sample)
         if os.path.exists("list_Samples/"+sample+".txt"):
             file_lists=bins("list_Samples/"+sample+".txt",3000000000)#size in bytes 1GB
         else:
@@ -159,7 +163,7 @@ rm run.sh
         exe+="rm -r "+fileDir+" \n"
     exe+="rm -r $CONFIGDIR \n"
     exe+="rm -r *.root \n"
-    exe+="rm -r * \n"
+    exe+="rm -r *.tar.gz \n"
     CR=""
     if options.CR:
         CR="-CR"
@@ -283,6 +287,7 @@ Output          = out.$(Process)_$(Cluster)
 Log             = condor_$(Cluster).log
 transfer_input_files = %s
 should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
 request_memory  = 0.5 GB
 Notification    = Error
 
