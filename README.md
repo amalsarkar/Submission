@@ -3,17 +3,20 @@ A python version of the grid submission
 
 
 In order to submit:
-* source your environment
+* source your environment (as you would for running the analyzer)
 * set ANALYSISDIR (export ANALYSISDIR=/path/to/your/analysisdir)
 * choose the files you want to run in SAMPLES_LIST.cfg (you can name it what you want)
 * run ./remote.py SAMPLES_LIST.cfg
 * add files ./add_root_files.py
+* on first run you have to execute ./make_tester.sh once
 
 One comment on the input for the SAMPLES_LIST.cfg:
 * It will automatically update the samples that are not in the folder at the first run
 * The sample name has to be something that fits
         /eos/uscms/store/user/ra2tau/July72017/*/*NAME*
+        
         /eos/uscms/store/user/ra2tau/jan2017tuple/*/*NAME*
+        
         /eos/uscms/store/user/ra2tau/jruizalv/*/*NAME*
 
 
