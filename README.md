@@ -12,7 +12,8 @@ In order to submit:
 
 One comment on the input for the SAMPLES_LIST.cfg:
 * It will automatically update the samples that are not in the folder at the first run
-* The sample name has to be something that fits
+* The sample name has to be something that fits:
+
         /eos/uscms/store/user/ra2tau/July72017/*/*NAME*
         
         /eos/uscms/store/user/ra2tau/jan2017tuple/*/*NAME*
