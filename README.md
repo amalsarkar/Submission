@@ -15,9 +15,7 @@ One comment on the input for the SAMPLES_LIST.cfg:
 * The sample name has to be something that fits:
 
         /eos/uscms/store/user/ra2tau/July72017/*/*NAME*
-        
         /eos/uscms/store/user/ra2tau/jan2017tuple/*/*NAME*
-        
         /eos/uscms/store/user/ra2tau/jruizalv/*/*NAME*
 
 
