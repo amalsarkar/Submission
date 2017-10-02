@@ -118,15 +118,16 @@ def getFilesfromFile(cfgFile, options):
         if line[0]=="#" or len(line.split())==0:
             continue
         sample=line.strip()
-        sample=re.sub('-amcatnloFXFX-pythia8$', '', sample)
-        sample=re.sub('-madgraphMLM-pythia8$', '', sample)
-        sample=re.sub('-powheg_pythia8$', '', sample)
-        sample=re.sub('-pythia8$', '', sample)
-        if os.path.exists("list_Samples/"+sample+".txt"):
-            file_lists=bins("list_Samples/"+sample+".txt",3000000000)#size in bytes 1GB
+        if not options.filesFromACCRE:
+            sample=re.sub('-amcatnloFXFX-pythia8$', '', sample)
+            sample=re.sub('-madgraphMLM-pythia8$', '', sample)
+            sample=re.sub('-powheg_pythia8$', '', sample)
+            sample=re.sub('-pythia8$', '', sample)
+            if not os.path.exists("list_Samples/"+sample+".txt"):
+                create_sample_list(sample)
+            file_lists=bins("list_Samples/"+sample+".txt",8000000000)#size in bytes 3GB
         else:
-            create_sample_list(sample)
-            file_lists=bins("list_Samples/"+sample+".txt",3000000000)#size in bytes 1GB
+            file_lists=bins("listSampleACCRE/"+sample+".txt",8000000000)#size in bytes 3GB
         if len(file_lists)>0:
             file_lists=[x for x in file_lists if "failed" not in x]
             sampleList[sample]=file_lists
@@ -197,6 +198,8 @@ def main():
                             help = 'Force the output folder to be overwritten. [default = %default]')
     parser.add_option( '--debug', metavar = 'LEVEL', default = 'INFO',
                        help= 'Set the debug level. Allowed values: ERROR, WARNING, INFO, DEBUG. [default = %default]' )
+    parser.add_option( '--filesFromACCRE', action = 'store_true', default = False,
+                       help= 'Use the files from ACCRE [default = %default]' )
     parser.add_option( '-t', '--Tag', default = "run_%s_%s_%s_%s"%(date_time.year,
                                                                         date_time.month,
                                                                         date_time.day,
@@ -290,6 +293,7 @@ should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 request_memory  = 0.5 GB
 Notification    = Error
+x509userproxy = $ENV(X509_USER_PROXY)
 
 """%(pathtozip)
         f=open("wrapper.sh","w")
