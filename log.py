@@ -27,7 +27,7 @@ class Subscreen():
     highlight=0
     highlight_p = 0
     py = 0
-    colors = {"COMPLETED": 3, "FAILED": 2, "ERROR": 2,  "RUNNING": 1, "COMPLETING": 1, "PENDING": 5, "TIMEOUT": 2, "FINISHING": 1, "STARTING": 1}
+    colors = {"COMPLETED": 3, "FAILED": 2, "ERROR": 2,  "RUNNING": 1, "COMPLETING": 1,"IDLE": 1, "PENDING": 5, "TIMEOUT": 2, "FINISHING": 1, "STARTING": 1}
     single_scrolling = False
     
     def __init__(self, y, x, total_jobs):

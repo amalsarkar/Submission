@@ -168,6 +168,7 @@ rm run.sh
     CR=""
     if options.CR:
         CR="-CR"
+    isdata= not "RunII" in inputfiles[0]
     d = dict(
             CONFIGDIR=options.configdir,
             INPUTFILES=" ".join(inputfiles),
@@ -175,6 +176,7 @@ rm run.sh
             OUTPUTFOLDER=options.outputFolder,
             SAMPLE=sample,
             CONTOLLREGION=CR,
+            ISDATA=isdata,
         )
     exe=Template(exe).safe_substitute(d)
     exeFile=open("run_"+outputfile.replace(".root","")+".sh","w+")
