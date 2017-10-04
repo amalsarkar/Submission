@@ -1,0 +1,9 @@
+*~
+*/*~
+#*#
+*.out
+*root
+obj/*.o
+log.txt
+.dummyinfo
+*.pyc
