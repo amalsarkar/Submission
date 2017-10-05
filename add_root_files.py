@@ -82,7 +82,7 @@ def final_merge(options):
     for f in short_names:
         outputname=os.path.join(outdir,f+".root")
         samplelist=glob.glob(options.output+"/tmp/*%s*.root"%f)
-        samplelist=filter(lambda x: (f+"0" not in x) or (f+"_HT" not in x),samplelist)
+        samplelist=filter(lambda x: (f+"0" not in x) and (f+"_HT" not in x),samplelist)
         args.append([outputname, f, samplelist, options])
     if len(args)>0:
         #now merge all samples
