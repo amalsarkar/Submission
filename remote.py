@@ -144,6 +144,7 @@ cd ${_CONDOR_SCRATCH_DIR}
 tar -xvzf exe.tar.gz
 ls
 isData=$ISDATA
+echo $isData
 
 if [ ! -z $isData ]
 then
@@ -168,7 +169,7 @@ rm run.sh
     CR=""
     if options.CR:
         CR="-CR"
-    isdata= not "RunII" in inputfiles[0]
+    isdata= "RunII" in inputfiles[0]
     d = dict(
             CONFIGDIR=options.configdir,
             INPUTFILES=" ".join(inputfiles),
@@ -176,7 +177,7 @@ rm run.sh
             OUTPUTFOLDER=options.outputFolder,
             SAMPLE=sample,
             CONTOLLREGION=CR,
-            ISDATA=isdata,
+            ISDATA=1 if isdata else 0,
         )
     exe=Template(exe).safe_substitute(d)
     exeFile=open("run_"+outputfile.replace(".root","")+".sh","w+")
