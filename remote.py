@@ -148,10 +148,12 @@ echo $isData
 
 if [ ! -z $isData ]
 then
-    sed -r -i -e 's/(isData\s+)(0|false)/true/' -e 's/(CalculatePUS[a-z]+\s+)(1|true)/false/' \
+    echo "switch data to true"
+    sed -r -i -e 's/(isData\s+)(0|false)/isData true/' -e 's/(CalculatePUS[a-z]+\s+)(1|true)/CalculatePUSystematics false/' \
 	$CONFIGDIR/Run_info.in
 else
-    sed -r -i -e 's/(isData\s+)(1|true)/false/' -e 's/(CalculatePUS[a-z]+\s+)(0|false)/true/' \
+    echo "switch data to false"
+    sed -r -i -e 's/(isData\s+)(1|true)/isData false/' -e 's/(CalculatePUS[a-z]+\s+)(0|false)/CalculatePUSystematics true/' \
 	$CONFIGDIR/Run_info.in
 fi
 
@@ -177,7 +179,7 @@ rm run.sh
             OUTPUTFOLDER=options.outputFolder,
             SAMPLE=sample,
             CONTOLLREGION=CR,
-            ISDATA="true" if isdata else "",
+            ISDATA="" if isdata else "false",
         )
     exe=Template(exe).safe_substitute(d)
     exeFile=open("run_"+outputfile.replace(".root","")+".sh","w+")
@@ -298,14 +300,14 @@ request_memory  = 0.5 GB
 Notification    = Error
 x509userproxy = $ENV(X509_USER_PROXY)
 
-"""%(pathtozip)
+"""%(", ".join([pathtozip]+[os.path.join(os.getcwd(),"run_%s_%d.sh"%(sample,i)) for i,binned in enumerate(sampleList[sample]) ]) )
         f=open("wrapper.sh","w")
         f.write(wrapper)
         f.close()
         
         for i,binned in enumerate(sampleList[sample]):
             makeExe(options,binned,"%s_%d.root"%(sample,i),sample)
-            condor_jdl+="arguments = %s \n"%(os.path.join(os.getcwd(),"run_%s_%d.sh"%(sample,i)) )
+            condor_jdl+="arguments = %s \n"%("run_%s_%d.sh"%(sample,i))
             condor_jdl+="queue\n"
         condor_jdl+="\n"
         f=open("condor.jdl","w")
