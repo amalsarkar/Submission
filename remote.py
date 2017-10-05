@@ -177,7 +177,7 @@ rm run.sh
             OUTPUTFOLDER=options.outputFolder,
             SAMPLE=sample,
             CONTOLLREGION=CR,
-            ISDATA=1 if isdata else 0,
+            ISDATA="true" if isdata else "",
         )
     exe=Template(exe).safe_substitute(d)
     exeFile=open("run_"+outputfile.replace(".root","")+".sh","w+")
