@@ -4,7 +4,7 @@ A python version of the grid submission
 
 In order to submit:
 * source your environment (as you would for running the analyzer)
-* set ANALYSISDIR (export ANALYSISDIR=/path/to/your/analysisdir)
+* set ANALYSISDIR (export ANALYSISDIR=/path/to/your/analysisdir or setenv ANALYSISDIR /path/to/your/analysisdir)
 * choose the files you want to run in SAMPLES_LIST.cfg (you can name it what you want)
 * run ./remote.py SAMPLES_LIST.cfg
 * add files ./add_root_files.py
