@@ -171,7 +171,7 @@ rm run.sh
     CR=""
     if options.CR:
         CR="-CR"
-    isdata= "RunII" in inputfiles[0]
+    isdata= "RunII" in inputfiles[0] or "Tune" in inputfiles[0]
     d = dict(
             CONFIGDIR=options.configdir,
             INPUTFILES=" ".join(inputfiles),
