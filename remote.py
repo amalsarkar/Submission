@@ -146,7 +146,7 @@ ls
 isData=$ISDATA
 echo $isData
 
-if [ -z $isData ]
+if [! -z $isData ]
 then
     echo "switch data to true"
     sed -r -i -e 's/(isData\s+)(0|false)/isData true/' -e 's/(CalculatePUS[a-z]+\s+)(1|true)/CalculatePUSystematics false/' \
