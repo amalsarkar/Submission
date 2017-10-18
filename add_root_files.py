@@ -60,7 +60,7 @@ def main():
 def final_merge(options):
     files=glob.glob(options.output+"/tmp/*.root")
     short_names=set()
-    match1 = re.compile('(_ext)|(_TuneCUETP8M1)|([_-][vV][123])|(_RunII)|(_13TeV)')
+    match1 = re.compile('(_ext)|(_Tune)|([_-][vV][123])|(_RunII)|(_13TeV)')
     
     for file in files:
         if(os.path.isdir(file)):
@@ -81,8 +81,10 @@ def final_merge(options):
     args=[]
     for f in short_names:
         outputname=os.path.join(outdir,f+".root")
-        samplelist=glob.glob(options.output+"/tmp/*%s*.root"%f)
+        samplelist=glob.glob(outdir+"/tmp/*%s*.root"%f)
         samplelist=filter(lambda x: (f+"0" not in x) and (f+"_HT" not in x),samplelist)
+        if len(samplelist)==1 and samplelist[0]==outputname:
+            continue
         args.append([outputname, f, samplelist, options])
     if len(args)>0:
         #now merge all samples
