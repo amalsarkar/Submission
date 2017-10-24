@@ -82,6 +82,7 @@ def create_sample_list(sample):
             break
     if folder is None:
         log.info("Sample %s was not found"%sample)
+    log.info("Found sample %s, will test for files. This may take a while (only the first time)."%sample)
     
     sampleFile = open("list_Samples/" + sample + ".txt","w")
     rfile=ROOT.TFile()
@@ -99,7 +100,7 @@ def create_sample_list(sample):
             except:
                 output=""
             for f in files:
-                if ".root" in f and not "failed" in f:
+                if ".root" in f and not "failed" in root:
                     filepath=os.path.join(root, f).replace("/eos/uscms","root://cmseos.fnal.gov//")
                     if filepath.split("//")[-1] in output:
                         log.info("Bad file: %s"%filepath)
@@ -129,8 +130,11 @@ def getFilesfromFile(cfgFile, options):
         else:
             file_lists=bins("listSampleACCRE/"+sample+".txt",8000000000)#size in bytes 3GB
         if len(file_lists)>0:
-            file_lists=[x for x in file_lists if "failed" not in x]
-            sampleList[sample]=file_lists
+            cleaned_list=[]
+            for binedList in file_lists:
+                binedList=[x for x in binedList if "failed" not in x]
+                cleaned_list.append(binedList)
+            sampleList[sample]=cleaned_list
     return sampleList
 
 def makeExe(options,inputfiles,outputfile,sample):
@@ -146,7 +150,7 @@ ls
 isData=$ISDATA
 echo $isData
 
-if [! -z $isData ]
+if [ ! -z $isData ]
 then
     echo "switch data to true"
     sed -r -i -e 's/(isData\s+)(0|false)/isData true/' -e 's/(CalculatePUS[a-z]+\s+)(1|true)/CalculatePUSystematics false/' \
