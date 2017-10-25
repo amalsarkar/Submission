@@ -18,6 +18,9 @@ One comment on the input for the SAMPLES_LIST.cfg:
         /eos/uscms/store/user/ra2tau/jan2017tuple/*/*NAME*
         /eos/uscms/store/user/ra2tau/jruizalv/*/*NAME*
 
+There is a bug in the xrd version of root https://root-forum.cern.ch/t/xrdcp-doesnt-work-after-changing-root-to-v6-06-08/22320
+You must change to an other root version e.g. by setting up a newer CMSSW (e.g. CMSSW_9_2_X)
+
 
 There are some options you might want to look at ./remote.py -h or ./add_root_files.py -h
 
