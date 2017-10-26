@@ -21,6 +21,8 @@ One comment on the input for the SAMPLES_LIST.cfg:
 There is a bug in the xrd version of root https://root-forum.cern.ch/t/xrdcp-doesnt-work-after-changing-root-to-v6-06-08/22320
 You must change to an other root version e.g. by setting up a newer CMSSW (e.g. CMSSW_9_2_X)
 
+Before Submission you have to make a proxy:
+voms-proxy-init -voms cms -rfc -valid 192:00
 
 There are some options you might want to look at ./remote.py -h or ./add_root_files.py -h
 
