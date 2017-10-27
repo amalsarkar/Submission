@@ -124,11 +124,16 @@ def getFilesfromFile(cfgFile, options):
             sample=re.sub('-madgraphMLM-pythia8$', '', sample)
             sample=re.sub('-powheg_pythia8$', '', sample)
             sample=re.sub('-pythia8$', '', sample)
+            sample=re.sub('-pythia8_TuneCUETP8M1$', '', sample)
+            sample=re.sub('-powheg-madspin', '', sample)
+            sample=re.sub('-powhegV2-madspin', '', sample)
+            sample=re.sub('-powheg', '', sample)
+            sample=re.sub('-powheg-pythia8$', '', sample)
             if not os.path.exists("list_Samples/"+sample+".txt"):
                 create_sample_list(sample)
-            file_lists=bins("list_Samples/"+sample+".txt",8000000000)#size in bytes 3GB
+            file_lists=bins("list_Samples/"+sample+".txt",1)#size in bytes 3GB
         else:
-            file_lists=bins("listSampleACCRE/"+sample+".txt",8000000000)#size in bytes 3GB
+            file_lists=bins("listSampleACCRE/"+sample+".txt",1)#size in bytes 3GB
         if len(file_lists)>0:
             cleaned_list=[]
             for binedList in file_lists:
@@ -161,7 +166,7 @@ else
 	$CONFIGDIR/Run_info.in
 fi
 
-./Analyzer -in $INPUTFILES -out $OUPUTFILE -C $CONFIGDIR $CONTOLLREGION
+./Analyzer $INPUTFILES $OUPUTFILE
 
 xrdcp -sf $_CONDOR_SCRATCH_DIR/$OUPUTFILE $OUTPUTFOLDER/$SAMPLE/$OUPUTFILE
 rm run.sh
