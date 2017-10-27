@@ -83,6 +83,7 @@ def final_merge(options):
         outputname=os.path.join(outdir,f+".root")
         samplelist=glob.glob(outdir+"/tmp/*%s*.root"%f)
         samplelist=filter(lambda x: (f+"0" not in x) and (f+"_HT" not in x),samplelist)
+        samplelist=filter(lambda x: ("/"+f in x),samplelist)
         if len(samplelist)==1 and samplelist[0]==outputname:
             continue
         args.append([outputname, f, samplelist, options])
@@ -157,6 +158,8 @@ def hadd(item):
                 calling= "xrdcp "+samplelist[0]+" "+outputname
             else:
                 calling= "mv "+samplelist[0]+" "+outputname
+        elif len(samplelist)==0:
+            calling='echo "Error no File for %s"'%(sample)
         else:
             calling="hadd -f9 "+outputname+" "+" ".join(samplelist)
         #print(calling)
