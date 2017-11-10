@@ -61,6 +61,9 @@ class Task:
         ">":"FINISHING",
         "<":"STARTING",
         }
+        self.jobs=[]
+        for i in range(self.njobs):
+            self.jobs.append(Job(i,self))
         #ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
         #270462.18  kpadeken       10/2  09:30   0+02:57:19 R  0   976.6 wrapper.sh /uscms_
         #270470.80  kpadeken       10/2  09:30   0+02:55:39 R  0   976.6 wrapper.sh /uscms_
@@ -78,11 +81,12 @@ class Task:
                 try:
                     status=staus_translate[status]
                 except:
-                    logging.info(status)
-                    logging.info(stati)
+                    log.info(status)
+                    log.info(stati)
                 self.jobs[job_id].update(status,"None",submitted_time,runtime)
         for i in range(self.njobs):
-            if self.jobs[i].status=="None":
+            #log.info(self.jobs[i].status)
+            if self.jobs[i].status=="None" or self.jobs[i].status=="COMPLETED" :
                 output_status="Done OK"
                 total_runtime=datetime.timedelta(0)
                 if(os.path.getsize(self.jobs[i].errorfile)>0):
@@ -136,7 +140,6 @@ class Task:
         jobStatusNumbers=defaultdict(int)
         good, bad = 0, 0
         for job in self.jobs:
-            #try:
             if job.status!=job.frontendstatus:
                 jobStatusNumbers[job.status]+=1
                 jobStatusNumbers[job.frontendstatus]+=1
@@ -146,8 +149,6 @@ class Task:
                 bad += 1
             if job.frontendstatus == "Done OK":
                 good += 1
-            #except AttributeError:
-                #pass
         jobStatusNumbers["total"]=len(self.jobs)
         jobStatusNumbers["good"] = good
         jobStatusNumbers["bad"] = bad
@@ -188,6 +189,16 @@ class Task:
             command="condor_rm %d.%d"%(self.id,itask)
             log.debug(command)
             subprocess.call(command, shell=True)
+    
+    def run_time(self):
+        runtime=datetime.timedelta(0)
+        now=datetime.datetime.now()
+        for ijob in self.jobs:
+            if (ijob.starttime-now)>runtime:
+                runtime=ijob.starttime-now
+            if ijob.runtime > runtime:
+                runtime=ijob.runtime
+        return runtime
 
 
 class Job:
@@ -230,7 +241,7 @@ def checkVomsProxy( time=86400 ):
     timeleft = timeLeftVomsProxy()
     return timeleft > time
 
-def renewVomsProxy( voms='cms:/cms/dcms', passphrase=None ):
+def renewVomsProxy( voms='cms', passphrase=None ):
     """Make a new proxy with a lifetime of one week."""
     if passphrase:
         p = subprocess.Popen(['voms-proxy-init', '--voms', voms, '--valid', '192:00'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.STDOUT)

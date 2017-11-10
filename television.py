@@ -120,6 +120,7 @@ def statistics(taskList):
     rootplotlib.init()
     c1=ROOT.TCanvas("c1","",600,600)
     c1.UseCurrentStyle()
+    now=datetime.datetime.now()
     totaltimes, runtimes, finished=[],[],[]
     for t in taskList:
         for j in t.jobs:
@@ -132,9 +133,9 @@ def statistics(taskList):
             except (IndexError, KeyError, AttributeError):
                 endtime=time.time()
             try:
-                runtime = j.starttime-j.endtime
+                runtime = j.endtime-j.starttime
             except (IndexError, KeyError, AttributeError):
-                runtime=endtime
+                runtime=now-j.starttime
             totaltimes.append((endtime-starttime)/60)
             runtimes.append((endtime-runtime)/60)
             if "DONE" in j.status:
@@ -183,8 +184,10 @@ class Overview:
         self.jobstati=""
         self.height=stdscr.getmaxyx()[0]-16
         self.overview = curseshelpers.SelectTable(stdscr, top=10, height=self.height, maxrows=100+len(tasks), footer=True)
-        widths=[2, 100, 12, 12, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
-        self.overview.setColHeaders(["", "Task", "Status", "Performance", "Total", "Prep.", "Run.", "RRun.", "Abrt.", "Fail.", "OK", "Good", "None", "Retr."], widths)
+        #widths=[2, 100, 12, 12, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
+        #self.overview.setColHeaders(["", "Task", "Status", "Performance", "Total", "Prep.", "Run.", "RRun.", "Abrt.", "Fail.", "OK", "Good", "None", "R. Time"], widths)
+        widths=[2, 100, 12, 12, 9, 9, 9, 9, 9, 9, 9, 9]
+        self.overview.setColHeaders(["", "Task", "Status", "Performance", "Total", "Prep.", "Run.", "Fail.", "OK", "Good", "None", "R. Time"], widths)
         for task in tasks:
             taskOverview = curseshelpers.SelectTable(stdscr, top=10, height=self.height, maxrows=100+len(task.jobs))
             widths=[100, 16, 22, 22, 16, 10]
@@ -197,21 +200,18 @@ class Overview:
             command="condor_q %s"%(getpass.getuser())
             proc = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
             self.jobstati = proc.stdout.read()
-            for task in tasks:
+            self.tasks = tasks
+            for task in self.tasks:
                 task.status(self.jobstati)
-        self.tasks = tasks
-        task=self.tasks[nextTaskId]
-        #for task in tasks:
-            #logging.info("nextTaskId %d   id %d"%(nextTaskId,task.id))
-            #if nextTaskId==task.id:
-        task.status(self.jobstati)
+        else:
+            return
         #parameters = [tasks[nextTaskId], resubmitList[nextTaskId], killList[nextTaskId]]
-        killJobs=killList[nextTaskId]
-        resubmitJobs=resubmitList[nextTaskId]
-        if len(killJobs) > 0:
-            task.kill(killJobs)
-        if len(resubmitJobs) > 0:
-            task.resubmit(resubmitJobs)
+        #killJobs=killList[nextTaskId]
+        #resubmitJobs=resubmitList[nextTaskId]
+        #if len(killJobs) > 0:
+            #task.kill(killJobs)
+        #if len(resubmitJobs) > 0:
+            #task.resubmit(resubmitJobs)
         
         self.overview.clear()
         totalstatusnumbers = collections.defaultdict(int)
@@ -243,7 +243,19 @@ class Overview:
                 icon = ">"
             else:
                 icon = " "
-            cells = [icon, task.sample, task.frontendstatus, strperformance, statusnumbers['total'], statusnumbers['PENDING']+ statusnumbers['IDLE']+statusnumbers['SUBMITTED']+statusnumbers['REGISTERED'], statusnumbers['RUNNING'], statusnumbers['REALLY-RUNNING'], statusnumbers['ABORTED'], statusnumbers['ERROR']+statusnumbers['FAILED']+statusnumbers['DONE-FAILED'], statusnumbers['Done OK']+statusnumbers['COMPLETED']+statusnumbers['DONE-OK'], statusnumbers['good'], statusnumbers[None]+statusnumbers["None"], statusnumbers['RETRIEVED']]
+            cells = [icon, task.sample, 
+                    task.frontendstatus, 
+                    strperformance, 
+                    statusnumbers['total'], 
+                    statusnumbers['PENDING']+ statusnumbers['IDLE']+statusnumbers['SUBMITTED']+statusnumbers['REGISTERED'], 
+                    statusnumbers['RUNNING'], 
+                    #statusnumbers['REALLY-RUNNING'], 
+                    #statusnumbers['ABORTED'], 
+                    statusnumbers['ERROR']+statusnumbers['FAILED']+statusnumbers['DONE-FAILED'], 
+                    statusnumbers['Done OK']+statusnumbers['COMPLETED']+statusnumbers['DONE-OK'], 
+                    statusnumbers['good'], 
+                    statusnumbers[None]+statusnumbers["None"], 
+                    task.run_time()]
             self.overview.addRow(cells, printmode)
             for key in statusnumbers:
                 totalstatusnumbers[key]+=statusnumbers[key]
@@ -273,7 +285,7 @@ class Overview:
                     if job.endtime is not None:
                         jobrunningfor = job.endtime-job.starttime
                     else:
-                        jobrunningfor = datetime.datetime.now()
+                        jobrunningfor = datetime.datetime.now()-job.starttime
                 except (KeyError, AttributeError):
                     jobrunningfor = ""
                 cells = [jobid, jobstatus, jobsince, jobrunningfor, jobfestatus, jobreturncode]
@@ -297,7 +309,19 @@ class Overview:
         else:
             performance = totalstatusnumbers['good']/(totalstatusnumbers['good']+totalstatusnumbers['bad'])
             strperformance = '{0:>6.1%}'.format(performance)
-        cells = ["", "TOTAL", "", strperformance, totalstatusnumbers['total'], totalstatusnumbers['PENDING']+ totalstatusnumbers['IDLE']+totalstatusnumbers['SUBMITTED']+totalstatusnumbers['REGISTERED'], totalstatusnumbers['RUNNING'], totalstatusnumbers['REALLY-RUNNING'], totalstatusnumbers['ABORTED'], totalstatusnumbers['FAILED'], totalstatusnumbers['Done OK'], totalstatusnumbers['good'], totalstatusnumbers[None]+totalstatusnumbers["None"], totalstatusnumbers['RETRIEVED']]
+        cells = ["", 
+                "TOTAL", "", 
+                strperformance, 
+                totalstatusnumbers['total'], 
+                totalstatusnumbers['PENDING']+ totalstatusnumbers['IDLE']+totalstatusnumbers['SUBMITTED']+totalstatusnumbers['REGISTERED'],
+                totalstatusnumbers['RUNNING'], 
+                #totalstatusnumbers['REALLY-RUNNING'], 
+                #totalstatusnumbers['ABORTED'], 
+                totalstatusnumbers['FAILED'], 
+                totalstatusnumbers['Done OK'], 
+                totalstatusnumbers['good'], 
+                totalstatusnumbers[None]+totalstatusnumbers["None"], 
+                totalstatusnumbers['RETRIEVED']]
         self.overview.setFooters(cells)
         self._refresh()
     @property
@@ -515,21 +539,28 @@ if __name__ == "__main__":
     if len(args)==0 and not os.path.exists("submitted_samples.txt"):
         logging.error( "You must give either a input file or keep the submitted_samples.txt" )
         sys.exit(3)
+        
     elif (len(args)==0 and os.path.exists("submitted_samples.txt")):
         f=open("submitted_samples.txt","r")
         for line in f:
             if "outFolder:" in line:
-                args=line.replace("outFolder:","").strip()
+                args=[line.replace("outFolder:","").strip()]
                 break
-    if "/eos/uscms/" in args:
-        args=args.split(str(getpass.getuser())+"/")[-1]
-    run_folder=args
-
-    sample_list=glob.glob(args+"/*")
+            
+    if "/eos/uscms/" in args[0]:
+        args[0]=args[0].split(str(getpass.getuser())+"/")[-1]
+    run_folders=args
+    
+    sample_list=[]
+    for a in args:
+        sample_list+=glob.glob(a+"/*")
     sample_list=[i.split("/")[-1] for i in sample_list]
     sample_list=filter(lambda x: ("exe" not in x),sample_list)
     
-    taskList = getTasks(sample_list,run_folder)
+    taskList=[]
+    for folder in run_folders:
+        taskList += getTasks(sample_list,folder)
+    
 
     if options.proxy:
         passphrase=None
