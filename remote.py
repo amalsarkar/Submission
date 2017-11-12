@@ -74,7 +74,13 @@ def create_sample_list(sample):
     "/eos/uscms/store/user/ra2tau/July72017/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/%s"%(sample),
-    "/eos/uscms//store/user/jruizalv/*%s*"%(sample),
+    "/eos/uscms/store/user/ra2tau/jan2017tuple/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/%s*"%(sample),
+    "/eos/uscms/store/user/jruizalv/*%s*"%(sample),
+    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-10to50/*%s*"%(sample), 
+    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-1500to2000/*%s*"%(sample),  
+    "/eos/uscms/store/user/jruizalv/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/*%s*"%(sample),
+    "/uscms_data/d3/cfgonzal/ZprimeAnalysis/2017_BSG3G/CMSSW_8_0_10/src/LIST_SAMPLES/ZprimeSamples/*%s*"%(sample),
+
     ]
     for l in locations:
         folder=getFolder(l,sample)
@@ -82,7 +88,6 @@ def create_sample_list(sample):
             break
     if folder is None:
         log.info("Sample %s was not found"%sample)
-    log.info("Found sample %s, will test for files. This may take a while (only the first time)."%sample)
     
     sampleFile = open("list_Samples/" + sample + ".txt","w")
     rfile=ROOT.TFile()
@@ -100,7 +105,7 @@ def create_sample_list(sample):
             except:
                 output=""
             for f in files:
-                if ".root" in f and not "failed" in root:
+                if ".root" in f and not "failed" in f:
                     filepath=os.path.join(root, f).replace("/eos/uscms","root://cmseos.fnal.gov//")
                     if filepath.split("//")[-1] in output:
                         log.info("Bad file: %s"%filepath)
@@ -130,11 +135,8 @@ def getFilesfromFile(cfgFile, options):
         else:
             file_lists=bins("listSampleACCRE/"+sample+".txt",8000000000)#size in bytes 3GB
         if len(file_lists)>0:
-            cleaned_list=[]
-            for binedList in file_lists:
-                binedList=[x for x in binedList if "failed" not in x]
-                cleaned_list.append(binedList)
-            sampleList[sample]=cleaned_list
+            file_lists=[x for x in file_lists if "failed" not in x]
+            sampleList[sample]=file_lists
     return sampleList
 
 def makeExe(options,inputfiles,outputfile,sample):
@@ -175,8 +177,7 @@ rm run.sh
     CR=""
     if options.CR:
         CR="-CR"
-    #isdata= "RunII" in inputfiles[0] or "Tune" in inputfiles[0]
-    isdata= not "_Run20" in inputfiles[0]
+    isdata= "RunII" in inputfiles[0]
     d = dict(
             CONFIGDIR=options.configdir,
             INPUTFILES=" ".join(inputfiles),

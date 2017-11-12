@@ -106,11 +106,9 @@ class Job_Holder():
     samples = OrderedDict()
     all_jobs = OrderedDict() #  [ state, time ]
     jobs_overview = OrderedDict() # [state, id, max_run]
-    options=None
     
     def __init__(self, sample_list,options, stdscr = None):
         self.stdscr = stdscr
-        self.options=options
         run_folder=options.runFolder
         for sample in sample_list:
             job_logs=glob.glob(os.path.join(run_folder,sample)+"/condor*.log")
@@ -240,21 +238,6 @@ class Job_Holder():
                 else:
                     sample_info["%d"%i]=[time.localtime(),datetime.timedelta(0),"COMPLETED","0"]
         return sample_info
-        
-    def get_completion_info(self,sample,task_id):
-        output_status="Done"
-        total_runtime=datetime.timedelta(0)
-        job_id,njobs=self.samples[sample]
-        if(os.path.getsize(os.path.join(self.options.runFolder,sample,"err.%d_%s"%(task_id,job_id)))>0):
-            output_status="Error"
-        
-        start_time=None
-        end_time=None
-        condor_log=open(os.path.join(self.options.runFolder,sample,"condor_%s.log"%(job_id)))
-        
-        
-        
-        
                 
     
 class Main_Program():

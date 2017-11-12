@@ -4,7 +4,7 @@ A python version of the grid submission
 
 In order to submit:
 * source your environment (as you would for running the analyzer)
-* set ANALYSISDIR (export ANALYSISDIR=/path/to/your/analysisdir or setenv ANALYSISDIR /path/to/your/analysisdir)
+* set ANALYSISDIR (export ANALYSISDIR=/path/to/your/analysisdir)
 * choose the files you want to run in SAMPLES_LIST.cfg (you can name it what you want)
 * run ./remote.py SAMPLES_LIST.cfg
 * add files ./add_root_files.py
@@ -18,11 +18,6 @@ One comment on the input for the SAMPLES_LIST.cfg:
         /eos/uscms/store/user/ra2tau/jan2017tuple/*/*NAME*
         /eos/uscms/store/user/ra2tau/jruizalv/*/*NAME*
 
-There is a bug in the xrd version of root https://root-forum.cern.ch/t/xrdcp-doesnt-work-after-changing-root-to-v6-06-08/22320
-You must change to an other root version e.g. by setting up a newer CMSSW (e.g. CMSSW_9_2_X)
-
-Before Submission you have to make a proxy:
-voms-proxy-init -voms cms -rfc -valid 192:00
 
 There are some options you might want to look at ./remote.py -h or ./add_root_files.py -h
 
