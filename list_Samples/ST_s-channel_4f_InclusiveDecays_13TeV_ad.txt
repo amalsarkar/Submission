@@ -1,0 +1,1 @@
+3823696218     root://cmseos.fnal.gov///store/user/ra2tau/July72017/ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo-pythia8/crab_ST_s-channel_4f_InclusiveDecays_13TeV-amcatnlo/170824_204626/0000/OutTree_4.root

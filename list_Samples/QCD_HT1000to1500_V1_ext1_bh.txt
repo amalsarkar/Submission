@@ -1,0 +1,2 @@
+585848176     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/QCD_HT1000to1500_V1_ext1_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_193905/0000/OutTree_98.root
+484115370     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/QCD_HT1000to1500_V1_ext1_TuneCUETP8M1_13TeV_RunIISummer16MiniAODv2_PUMoriond17_80X_mcRun2/170125_193905/0000/OutTree_99.root

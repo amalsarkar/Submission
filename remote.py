@@ -74,12 +74,23 @@ def create_sample_list(sample):
     "/eos/uscms/store/user/ra2tau/July72017/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/%s"%(sample),
-    "/eos/uscms/store/user/ra2tau/jan2017tuple/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/%s*"%(sample),
+#    "/eos/uscms/store/user/ra2tau/jan2017tuple/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/%s*"%(sample),
     "/eos/uscms/store/user/jruizalv/*%s*"%(sample),
-    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-10to50/*%s*"%(sample), 
-    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-1500to2000/*%s*"%(sample),  
-    "/eos/uscms/store/user/jruizalv/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/*%s*"%(sample),
-    "/uscms_data/d3/cfgonzal/ZprimeAnalysis/2017_BSG3G/CMSSW_8_0_10/src/LIST_SAMPLES/ZprimeSamples/*%s*"%(sample),
+    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-10to50/*%s*"%(sample),
+    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-1500to2000/*%s*"%(sample),
+#    "/eos/uscms/store/user/jruizalv/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/*%s*"%(sample),
+#    "/uscms_data/d3/cfgonzal/ZprimeAnalysis/2017_BSG3G/CMSSW_8_0_10/src/LIST_SAMPLES/ZprimeSamples/*%s*"%(sample),
+
+#    "/eos/uscms/store/user/ra2tau/July72017/*/%s"%(sample),
+#    "/eos/uscms/store/user/ra2tau/July72017/*/*%s*"%(sample),
+#    "/eos/uscms/store/user/ra2tau/jan2017tuple/*/*%s*"%(sample),
+#    "/eos/uscms/store/user/ra2tau/jan2017tuple/*/%s"%(sample),
+#    "/eos/uscms/store/user/ra2tau/jan2017tuple/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/%s*"%(sample),
+#    "/eos/uscms/store/user/jruizalv/*%s*"%(sample),
+#    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-10to50/*%s*"%(sample), 
+#    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-1500to2000/*%s*"%(sample),  
+#    "/eos/uscms/store/user/jruizalv/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/*%s*"%(sample),
+#    "/uscms_data/d3/cfgonzal/ZprimeAnalysis/2017_BSG3G/CMSSW_8_0_10/src/LIST_SAMPLES/ZprimeSamples/*%s*"%(sample),
 
     ]
     for l in locations:

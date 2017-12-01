@@ -1,0 +1,1 @@
+1713250921     root://cmseos.fnal.gov///store/user/ra2tau/July72017/VBFHToTauTau_M125_13TeV_powheg_pythia8/crab_VBFHToTauTau_M125_13TeV_powheg_pythia8/170829_131305/0000/OutTree_4.root

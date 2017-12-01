@@ -1,0 +1,1 @@
+1274844498     root://cmseos.fnal.gov////store/user/jruizalv/EWKWMinus2Jets_WToLNu_M-50_13TeV-madgraph-pythia8/EWKWMinus2Jets_WToLNu_v1/170529_080034/0000/OutTree_2.root
