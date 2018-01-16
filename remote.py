@@ -143,9 +143,9 @@ def getFilesfromFile(cfgFile, options):
             sample=re.sub('-pythia8$', '', sample)
             if not os.path.exists("list_Samples/"+sample+".txt"):
                 create_sample_list(sample)
-            file_lists=bins("list_Samples/"+sample+".txt",4000000000)#size in bytes 3GB
+            file_lists=bins("list_Samples/"+sample+".txt",3000000000)#size in bytes 3GB
         else:
-            file_lists=bins("listSampleACCRE/"+sample+".txt",4000000000)#size in bytes 3GB
+            file_lists=bins("listSampleACCRE/"+sample+".txt",3000000000)#size in bytes 3GB
         if len(file_lists)>0:
             file_lists=[x for x in file_lists if "failed" not in x]
             sampleList[sample]=file_lists
@@ -197,7 +197,7 @@ rm run.sh
             OUTPUTFOLDER=options.outputFolder,
             SAMPLE=sample,
             CONTOLLREGION=CR,
-            ISDATA="" if isdata else "false",
+            ISDATA="" if isdata else "",
         )
     exe=Template(exe).safe_substitute(d)
     exeFile=open("run_"+outputfile.replace(".root","")+".sh","w+")
