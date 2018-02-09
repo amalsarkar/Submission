@@ -74,22 +74,10 @@ def create_sample_list(sample):
     "/eos/uscms/store/user/ra2tau/July72017/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/%s"%(sample),
-    "/eos/uscms/store/user/ra2tau/jan2017tuple/SingleMuon/%s*"%(sample),
 #    "/eos/uscms/store/user/ra2tau/jan2017tuple/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/%s*"%(sample),
     "/eos/uscms/store/user/jruizalv/*%s*"%(sample),
-    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-10to50/*%s*"%(sample),
-    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-1500to2000/*%s*"%(sample),
-#    "/eos/uscms/store/user/jruizalv/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/*%s*"%(sample),
-#    "/uscms_data/d3/cfgonzal/ZprimeAnalysis/2017_BSG3G/CMSSW_8_0_10/src/LIST_SAMPLES/ZprimeSamples/*%s*"%(sample),
-
-#    "/eos/uscms/store/user/ra2tau/July72017/*/%s"%(sample),
-#    "/eos/uscms/store/user/ra2tau/July72017/*/*%s*"%(sample),
-#    "/eos/uscms/store/user/ra2tau/jan2017tuple/*/*%s*"%(sample),
-#    "/eos/uscms/store/user/ra2tau/jan2017tuple/*/%s"%(sample),
-#    "/eos/uscms/store/user/ra2tau/jan2017tuple/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/%s*"%(sample),
-#    "/eos/uscms/store/user/jruizalv/*%s*"%(sample),
-#    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-10to50/*%s*"%(sample), 
-#    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-1500to2000/*%s*"%(sample),  
+    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-10to50/*%s*"%(sample), 
+    "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-1500to2000/*%s*"%(sample),  
 #    "/eos/uscms/store/user/jruizalv/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/*%s*"%(sample),
 #    "/uscms_data/d3/cfgonzal/ZprimeAnalysis/2017_BSG3G/CMSSW_8_0_10/src/LIST_SAMPLES/ZprimeSamples/*%s*"%(sample),
 
@@ -161,19 +149,6 @@ date
 cd ${_CONDOR_SCRATCH_DIR}
 tar -xvzf exe.tar.gz
 ls
-isData=$ISDATA
-echo $isData
-
-if [ ! -z $isData ]
-then
-    echo "switch data to true"
-    sed -r -i -e 's/(isData\s+)(0|false)/isData true/' -e 's/(CalculatePUS[a-z]+\s+)(1|true)/CalculatePUSystematics false/' \
-	$CONFIGDIR/Run_info.in
-else
-    echo "switch data to false"
-    sed -r -i -e 's/(isData\s+)(1|true)/isData false/' -e 's/(CalculatePUS[a-z]+\s+)(0|false)/CalculatePUSystematics true/' \
-	$CONFIGDIR/Run_info.in
-fi
 
 ./Analyzer -in $INPUTFILES -out $OUPUTFILE -C $CONFIGDIR $CONTOLLREGION
 
@@ -189,7 +164,6 @@ rm run.sh
     CR=""
     if options.CR:
         CR="-CR"
-    isdata= "RunII" in inputfiles[0]
     d = dict(
             CONFIGDIR=options.configdir,
             INPUTFILES=" ".join(inputfiles),
@@ -197,7 +171,6 @@ rm run.sh
             OUTPUTFOLDER=options.outputFolder,
             SAMPLE=sample,
             CONTOLLREGION=CR,
-            ISDATA="" if isdata else "",
         )
     exe=Template(exe).safe_substitute(d)
     exeFile=open("run_"+outputfile.replace(".root","")+".sh","w+")

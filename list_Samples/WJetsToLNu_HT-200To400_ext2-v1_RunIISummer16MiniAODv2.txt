@@ -33,3 +33,4 @@
 3817402650     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-200To400_ext2-v1_RunIISummer16MiniAODv2/170125_215138/0000/OutTree_7.root
 5042867031     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-200To400_ext2-v1_RunIISummer16MiniAODv2/170125_215138/0000/OutTree_8.root
 5131378754     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-200To400_ext2-v1_RunIISummer16MiniAODv2/170125_215138/0000/OutTree_9.root
+4939803251     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/WJetsToLNu_HT-200To400_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/WJetsToLNu_HT-200To400_ext2-v1_RunIISummer16MiniAODv2/170125_215138/0000/failed/OutTree_10.root
