@@ -19,6 +19,8 @@ MCFOLDER[2]="TT"
 MCFOLDER[3]="VV"
 MCFOLDER[4]="WJets"
 
+###
+EXE="remote_1.py"
 
 echo "Please enter Data (0) or MC (1)"
 read type_d
@@ -43,7 +45,7 @@ else
 	echo ------------------------
 	read index
 	echo running ----- ${MCFILECFG[$index]} ----- to folder ----- ${MCFOLDER[$index]}
-	./remote.py ${MCFILECFG[$index]} -t ${MCFOLDER[$index]} --force
+	./$EXE ${MCFILECFG[$index]} -t ${MCFOLDER[$index]} --force 
 	else
 	echo no valid option
 	fi
