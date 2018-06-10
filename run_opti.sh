@@ -15,8 +15,3 @@ EXE="remote.py"
 echo "Running optimization"
 ./$EXE ${SIGNALCFG[0]} -t ${SIGNALFOLDER[0]} --force 
 
-for j in `seq 0 1` ;
-do
-echo running ----- ${MCFILECFG[$j]} ----- to folder ----- ${MCFOLDER[$j]}
-./$EXE ${MCFILECFG[$j]} -t ${MCFOLDER[$j]} --force
-done
