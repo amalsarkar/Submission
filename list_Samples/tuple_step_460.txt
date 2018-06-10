@@ -1,0 +1,7 @@
+16457494     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/stau-isr/tuple_step_460/OutTree_4965.root
+6103354     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/stau-isr/tuple_step_460/OutTree_4966.root
+16519809     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/stau-isr/tuple_step_460/OutTree_5004.root
+16526372     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/stau-isr/tuple_step_460/OutTree_5005.root
+16553442     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/stau-isr/tuple_step_460/OutTree_5036.root
+16527540     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/stau-isr/tuple_step_460/OutTree_6588.root
+3096024     root://cmseos.fnal.gov///store/user/ra2tau/jan2017tuple/stau-isr/tuple_step_460/OutTree_6589.root

@@ -74,6 +74,7 @@ def create_sample_list(sample):
     "/eos/uscms/store/user/ra2tau/July72017/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/*%s*"%(sample),
     "/eos/uscms/store/user/ra2tau/jan2017tuple/*/%s"%(sample),
+    "/eos/uscms/store/user/ra2tau/jan2017tuple/stau-isr/%s"%(sample),
 #    "/eos/uscms/store/user/ra2tau/jan2017tuple/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/%s*"%(sample),
     "/eos/uscms/store/user/jruizalv/*%s*"%(sample),
     "/eos/uscms/store/user/cfgonzal/2016_ntuples/DYJetsToLL_M-10to50/*%s*"%(sample), 
@@ -131,9 +132,9 @@ def getFilesfromFile(cfgFile, options):
             sample=re.sub('-pythia8$', '', sample)
             if not os.path.exists("list_Samples/"+sample+".txt"):
                 create_sample_list(sample)
-            file_lists=bins("list_Samples/"+sample+".txt",2000000000)#size in bytes 3GB
+            file_lists=bins("list_Samples/"+sample+".txt",3000000000)#size in bytes 3GB
         else:
-            file_lists=bins("listSampleACCRE/"+sample+".txt",2000000000)#size in bytes 3GB
+            file_lists=bins("listSampleACCRE/"+sample+".txt",3000000000)#size in bytes 3GB
         if len(file_lists)>0:
             file_lists=[x for x in file_lists if "failed" not in x]
             sampleList[sample]=file_lists

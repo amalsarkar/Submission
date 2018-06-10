@@ -20,7 +20,7 @@ MCFOLDER[3]="VV"
 MCFOLDER[4]="WJets"
 
 ###
-EXE="remote_1.py"
+EXE="remote.py"
 
 echo "Please enter Data (0) or MC (1)"
 read type_d
@@ -34,7 +34,7 @@ done
 echo ------------------------
 read index
 echo running ----- ${DATAFILECFG[$index]} ----- to folder ----- ${DATAFOLDER[$index]}
-./remote.py ${DATAFILECFG[$index]} -t ${DATAFOLDER[$index]} --force
+./$EXE ${DATAFILECFG[$index]} -t ${DATAFOLDER[$index]} --force
 else
 	if [ "$type_d" -eq 1 ]; then
 	echo Please Choose the sample: 
