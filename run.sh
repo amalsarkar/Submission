@@ -53,7 +53,7 @@ SIGNAL_FOLDER[0]="SIGNAL_STAU"
 
 ###################### Parameters
 EXE="remote.py"
-FINAL="RESULT"
+FINAL="TEMP"
 
 echo "Please enter Data (0), MC (1) or Signal (2)"
 read type_d
